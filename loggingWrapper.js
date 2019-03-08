@@ -1,5 +1,22 @@
 var wrapLog = function (callback, name) {
   /* your code here */
+
+
+return function (){
+
+let output = `${name}(`
+for(arg of arguments){
+output += arg
+output += ', '
+}
+output+= ") => "
+output += callback.apply(null,arguments)
+console.log(output)
+}
+
+
+
+
 };
 
 var area = function (x, y) {
